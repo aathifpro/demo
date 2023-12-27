@@ -1,0 +1,37 @@
+<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
+    <div class="container">
+        <div class="row d-flex align-items-stretch no-gutters">
+            <div class="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
+                <h2 class="h4 mb-2 mb-md-5 font-weight-bold">Contact Us</h2>
+                <form action="#" onsubmit="validateForm(event)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                        <div id="nameError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                            required>
+                        <div id="emailError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                            required>
+                        <div id="subjectError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea cols="30" rows="7" name="message" id="message" class="form-control"
+                            placeholder="Message" required></textarea>
+                        <div id="messageError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch">
+                <!-- <div id="map"></div> -->
+                <app-map-tag></app-map-tag>
+            </div>
+        </div>
+    </div>
+</section>

@@ -15,6 +15,19 @@ import { BookTableTagComponent } from './component/book-table-tag/book-table-tag
 import { HappyCustomerTagComponent } from './component/happy-customer-tag/happy-customer-tag.component';
 import { RecentBlogTagComponent } from './component/recent-blog-tag/recent-blog-tag.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { AboutScreenComponent } from './screen/about-screen/about-screen.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExperienceTagComponent } from './component/experience-tag/experience-tag.component';
+import { CommonHeaderComponent } from './component/common-header/common-header.component';
+import { ServiceScreenComponent } from './screen/service-screen/service-screen.component';
+import { ContactScreenComponent } from './screen/contact-screen/contact-screen.component';
+import { ContactFormTagComponent } from './component/contact-form-tag/contact-form-tag.component';
+import { ContactInfoTagComponent } from './component/contact-info-tag/contact-info-tag.component';
+import { BlogScreenComponent } from './screen/blog-screen/blog-screen.component';
+import { ReservationScreenComponent } from './screen/reservation-screen/reservation-screen.component';
+import { MapTagComponent } from './component/map-tag/map-tag.component';
+import { LoginScreenComponent } from './screen/login-screen/login-screen.component';
+import { MenuScreenComponent } from './screen/menu-screen/menu-screen.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +43,24 @@ import { FooterComponent } from './component/footer/footer.component';
     BookTableTagComponent,
     HappyCustomerTagComponent,
     RecentBlogTagComponent,
-    FooterComponent
+    FooterComponent,
+    AboutScreenComponent,
+    ExperienceTagComponent,
+    CommonHeaderComponent,
+    ServiceScreenComponent,
+    ContactScreenComponent,
+    ContactFormTagComponent,
+    ContactInfoTagComponent,
+    BlogScreenComponent,
+    ReservationScreenComponent,
+    MapTagComponent,
+    LoginScreenComponent,
+    MenuScreenComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
