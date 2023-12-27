@@ -19,6 +19,10 @@ import { BlogScreenComponent } from './screen/blog-screen/blog-screen.component'
 import { ReservationScreenComponent } from './screen/reservation-screen/reservation-screen.component';
 import { LoginScreenComponent } from './screen/login-screen/login-screen.component';
 import { MenuScreenComponent } from './screen/menu-screen/menu-screen.component';
+import { ProfileScreenComponent } from './screen/profile-screen/profile-screen.component';
+import { PaymentScreenComponent } from './screen/payment-screen/payment-screen.component';
+import { SingleProductScreenComponent } from './screen/single-product-screen/single-product-screen.component';
+import { OrderListScreenComponent } from './screen/order-list-screen/order-list-screen.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,6 +45,10 @@ const routes: Routes = [
   { path: 'reservation', component: ReservationScreenComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'menu', component: MenuScreenComponent },
+  { path: 'profile', component: ProfileScreenComponent },
+  { path: 'payment', component: PaymentScreenComponent },
+  { path: 'single-product', component: SingleProductScreenComponent },
+  { path: 'order-list', component: OrderListScreenComponent },
 ];
 
 @NgModule({

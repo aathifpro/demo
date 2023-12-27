@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,16 @@ import { ReservationScreenComponent } from './screen/reservation-screen/reservat
 import { MapTagComponent } from './component/map-tag/map-tag.component';
 import { LoginScreenComponent } from './screen/login-screen/login-screen.component';
 import { MenuScreenComponent } from './screen/menu-screen/menu-screen.component';
+import { ReservationFromComponent } from './component/reservation-from/reservation-from.component';
+import { ContactFormComponent } from './component/contact-form/contact-form.component';
+import { ProfileTagComponent } from './component/profile-tag/profile-tag.component';
+import { ProfileScreenComponent } from './screen/profile-screen/profile-screen.component';
+import { PaymentScreenComponent } from './screen/payment-screen/payment-screen.component';
+import { PaymentTagComponent } from './component/payment-tag/payment-tag.component';
+import { SingleProductScreenComponent } from './screen/single-product-screen/single-product-screen.component';
+import { SingleProductTagComponent } from './component/single-product-tag/single-product-tag.component';
+import { OrderListScreenComponent } from './screen/order-list-screen/order-list-screen.component';
+import { OrderListTagComponent } from './component/order-list-tag/order-list-tag.component';
 
 @NgModule({
   declarations: [
@@ -56,11 +67,22 @@ import { MenuScreenComponent } from './screen/menu-screen/menu-screen.component'
     MapTagComponent,
     LoginScreenComponent,
     MenuScreenComponent,
+    ReservationFromComponent,
+    ContactFormComponent,
+    ProfileTagComponent,
+    ProfileScreenComponent,
+    PaymentScreenComponent,
+    PaymentTagComponent,
+    SingleProductScreenComponent,
+    SingleProductTagComponent,
+    OrderListScreenComponent,
+    OrderListTagComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
