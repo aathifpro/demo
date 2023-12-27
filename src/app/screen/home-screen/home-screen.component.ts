@@ -14,5 +14,8 @@ export class HomeScreenComponent implements OnInit {
     
   }
 
+  public countNo = 4;
+  public visibleTitle: boolean = true;
+
 
 }

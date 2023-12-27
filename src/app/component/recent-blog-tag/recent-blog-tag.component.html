@@ -10,16 +10,17 @@
       </div>
       <div class="row">
         <!-- <div class="col-md-4 ftco-animate"> -->
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor="let blog of blogList; let i = index">
           <div class="blog-entry">
-            <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_1.jpg');">
+            <!-- <a href="blog-single.html" class="block-20" style="background-image: url({{blog.blogImage}});"> -->
+            <a href="blog-single.html" class="block-20" [style.background-image]="'url('+blog.blogImage+')'">
             </a>
             <div class="text pt-3 pb-4 px-4">
               <div class="meta">
-                <div><a href="#">Sept. 06, 2019</a></div>
-                <div><a href="#">Admin</a></div>
+                <div><a href="#">{{blog.dates}}</a></div>
+                <div><a href="#">{{blog.blogger}}</a></div>
               </div>
-              <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+              <h3 class="heading"><a href="#">{{blog.title}}</a></h3>
               <p class="clearfix">
                 <a href="#" class="float-left read">Read more</a>
                 <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
@@ -27,7 +28,12 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+
+
+
+
+
+        <!-- <div class="col-md-4">
           <div class="blog-entry">
             <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_2.jpg');">
             </a>
@@ -43,8 +49,8 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
+        </div> -->
+        <!-- <div class="col-md-4">
           <div class="blog-entry">
             <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_3.jpg');">
             </a>
@@ -60,7 +66,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

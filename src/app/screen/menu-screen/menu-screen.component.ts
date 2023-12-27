@@ -18,4 +18,6 @@ export class MenuScreenComponent implements OnInit {
     headerImage: "assets/images/bg_3.jpg"
   }
 
+  public visibleTitle: boolean = false;
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Blogs } from 'src/app/models/blogs.model';
 import { HeaderItems } from 'src/app/models/header-items.model';
 
 @Component({
@@ -17,5 +18,6 @@ export class BlogScreenComponent implements OnInit {
     pageName: "Stories",
     headerImage: "assets/images/bg_5.jpg"
   };
+
 
 }
