@@ -1,22 +1,38 @@
-<form action="#" onsubmit="validateForm(event)">
+<form action="#" [formGroup]="form" (click)="onSubmit()">
     <div class="form-group">
-        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
-        <div id="nameError" class="error-message"></div>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" formControlName="name"
+            [ngClass]="{'is-invalid': submitted && f['name'].errors}">
+        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']">Name is required</div>
+            <div *ngIf="f['name'].errors['minlength']">Name must be at least 6 characters</div>
+            <div *ngIf="f['name'].errors['maxlength']">Name must not exceed 20 characters</div>
+        </div>
     </div>
     <div class="form-group">
         <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-            required>
-        <div id="emailError" class="error-message"></div>
+            formControlName="email" [ngClass]="{'is-invalid': submitted && f['email'].errors}">
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+            <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+        </div>
     </div>
     <div class="form-group">
         <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-            required>
-        <div id="subjectError" class="error-message"></div>
+            formControlName="subject" [ngClass]="{'is-invalid': submitted && f['subject'].errors}">
+        <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+            <div *ngIf="f['subject'].errors['required']">Subject is required</div>
+            <div *ngIf="f['subject'].errors['minlength']">Subject must be at least 6 characters</div>
+            <div *ngIf="f['subject'].errors['maxlength']">Subject must not exceed 30 characters</div>
+        </div>
     </div>
     <div class="form-group">
-        <textarea cols="30" rows="7" name="message" id="message" class="form-control"
-            placeholder="Message" required></textarea>
-        <div id="messageError" class="error-message"></div>
+        <textarea cols="30" rows="7" name="message" id="message" class="form-control" placeholder="Message"
+            formControlName="message" [ngClass]="{'is-invalid': submitted && f['message'].errors}"></textarea>
+        <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+            <div *ngIf="f['message'].errors['required']">Message is required</div>
+            <div *ngIf="f['message'].errors['minlength']">Message must be at least 15 characters</div>
+            <div *ngIf="f['message'].errors['maxlength']">Message must not exceed 100 characters</div>
+        </div>
     </div>
     <div class="form-group">
         <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

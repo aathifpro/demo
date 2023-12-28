@@ -4,4 +4,7 @@ export class Products {
     ingredients?: string;
     image?: string;
     description?: string;
+    quantity?: any;
+    total?: any;
+    category?: string;
 }

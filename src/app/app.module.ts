@@ -39,6 +39,8 @@ import { SingleProductScreenComponent } from './screen/single-product-screen/sin
 import { SingleProductTagComponent } from './component/single-product-tag/single-product-tag.component';
 import { OrderListScreenComponent } from './screen/order-list-screen/order-list-screen.component';
 import { OrderListTagComponent } from './component/order-list-tag/order-list-tag.component';
+import { CartScreenComponent } from './screen/cart-screen/cart-screen.component';
+import { CartTagComponent } from './component/cart-tag/cart-tag.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { OrderListTagComponent } from './component/order-list-tag/order-list-tag
     SingleProductTagComponent,
     OrderListScreenComponent,
     OrderListTagComponent,
+    CartScreenComponent,
+    CartTagComponent,
   ],
   imports: [
     BrowserModule,
