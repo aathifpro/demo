@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from './service/auth.guard';
+
 import { HomeScreenComponent } from './screen/home-screen/home-screen.component';
 import { AboutScreenComponent } from './screen/about-screen/about-screen.component'; 
 import { ServiceScreenComponent } from './screen/service-screen/service-screen.component';
@@ -15,14 +17,14 @@ import { OrderListScreenComponent } from './screen/order-list-screen/order-list-
 import { CartScreenComponent } from './screen/cart-screen/cart-screen.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeScreenComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeScreenComponent, canActivate: [authGuard] },
   { path: 'about', component: AboutScreenComponent },
   { path: 'service', component: ServiceScreenComponent },
   { path: 'contact', component: ContactScreenComponent },
   { path: 'blog', component: BlogScreenComponent },
   { path: 'reservation', component: ReservationScreenComponent },
-  { path: 'login', component: LoginScreenComponent },
+  { path: 'login', component: LoginScreenComponent, canActivate: [authGuard] },
   { path: 'menu', component: MenuScreenComponent },
   { path: 'profile', component: ProfileScreenComponent },
   { path: 'payment', component: PaymentScreenComponent },

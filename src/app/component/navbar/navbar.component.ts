@@ -18,4 +18,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/about-screen']);
   }
 
+  logout() {
+    const confirmation = confirm("Do you want to logout!")
+    if(confirmation) {
+      localStorage.removeItem('JWT')
+      this.router.navigate(['/login']);
+    }
+  }
+
 }

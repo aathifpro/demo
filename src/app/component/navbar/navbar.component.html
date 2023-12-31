@@ -41,7 +41,7 @@
           <li class="nav-item"><a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Stories</a></li>
           <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Contact</a></li>
           <li class="nav-item cta"><a routerLink="/reservation" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Book a table</a></li>
-          <i class="fas fa-sign-in-alt m-4 fa-lg" style="color: #a07500ad;"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Out</a></i>
+          <i class="fas fa-sign-in-alt m-4 fa-lg" style="color: #a07500ad;"><a (click)="logout()">Out</a></i>
         </ul>
       </div>
     </div>

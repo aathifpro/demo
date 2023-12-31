@@ -1,7 +1,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form [formGroup]="signupForm">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -9,14 +9,34 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+                <input type="text" placeholder="Name" name="name" id="name" formControlName="name"
+                    [ngClass]="{'is-invalid': f['name'].errors}" />
+                <div *ngIf="f['name'].errors" class="invalid-feedback" style="text-align: left;">
+                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                    <div *ngIf="f['name'].errors['minlength']">Name must be at least 3 characters</div>
+                    <div *ngIf="f['name'].errors['maxlength']">Name must not exceed 15 characters</div>
+                </div>
+                <input type="email" placeholder="Email" name="email" id="email" formControlName="email"
+                    [ngClass]="{'is-invalid': f['email'].errors}" />
+                <div *ngIf="f['email'].errors" class="invalid-feedback" style="text-align: left;">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                </div>
+                <input type="password" placeholder="Password" name="password" id="password" formControlName="password"
+                    [ngClass]="{'is-invalid': f['password'].errors}">
+                <div *ngIf="f['password'].errors" class="invalid-feedback" style="text-align: left;" >
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                </div>
+                <input type="password" placeholder="Password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword" 
+                    [ngClass]="{'is-invalid': f['confirmPassword'].errors}" />
+                <div *ngIf="f['confirmPassword'].errors" class="invalid-feedback" style="text-align: left;">
+                    <div *ngIf="f['confirmPassword'].errors['required']">Confirm password is required</div>
+                </div>
+                <button type="button" [disabled]="signupForm.invalid" (click)="signup()">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form [formGroup]="signinForm">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -24,16 +44,25 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" placeholder="Email" name="email" id="email" formControlName="email"
+                    [ngClass]="{'is-invalid': f['email'].errors}" />
+                <div *ngIf="f['email'].errors" class="invalid-feedback" style="text-align: left;">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                </div>
+                <input type="password" placeholder="Password" name="password" id="password" formControlName="password"
+                    [ngClass]="{'is-invalid': f['password'].errors}">
+                <div *ngIf="f['password'].errors" class="invalid-feedback" style="text-align: left;" >
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                </div>
                 <a href="#">Forgot your password?</a>
-                <button><a href="index.html" style="color: #fff;">Sign In</a></button>
+                <button type="button" [disabled]="signinForm.invalid" (click)="login()">Sign Up</button>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
+                    <h1 style="color: #fff;">Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
                     <button class="ghost" id="signIn">Sign In</button>
                 </div>

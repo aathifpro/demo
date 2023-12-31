@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,6 @@ import { HappyCustomerTagComponent } from './component/happy-customer-tag/happy-
 import { RecentBlogTagComponent } from './component/recent-blog-tag/recent-blog-tag.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { AboutScreenComponent } from './screen/about-screen/about-screen.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ExperienceTagComponent } from './component/experience-tag/experience-tag.component';
 import { CommonHeaderComponent } from './component/common-header/common-header.component';
 import { ServiceScreenComponent } from './screen/service-screen/service-screen.component';
@@ -86,7 +86,8 @@ import { CartTagComponent } from './component/cart-tag/cart-tag.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
