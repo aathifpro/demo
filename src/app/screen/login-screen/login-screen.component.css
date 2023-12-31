@@ -183,6 +183,10 @@ input {
 	transition: transform 0.6s ease-in-out;
 }
 
+.btnDisabled {
+	opacity: 0.5;
+}
+
 .container.right-panel-active .overlay {
   	transform: translateX(50%);
 }

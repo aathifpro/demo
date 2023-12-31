@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-screen',
@@ -28,6 +29,7 @@ export class LoginScreenComponent implements OnInit {
     private service: AuthService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -92,7 +94,7 @@ export class LoginScreenComponent implements OnInit {
           console.log(response);
           alert("User is created");
           this.submitted = true;
-          this.signinForm.reset();
+          this.signupForm.reset();
         },
         error: (e) => {
           console.error(e)
@@ -108,9 +110,9 @@ export class LoginScreenComponent implements OnInit {
         next: (response) => {
           console.log(response);
           alert("User is Logged");
+          this.toastr.success('Login successful!', 'Success');
           this.submitted = true;
           if (response.jwtToken) {
-            // alert(response.jwtToken);
             const jwtToken = response.jwtToken;
             localStorage.setItem('JWT', jwtToken);
             this.router.navigateByUrl('/home');
@@ -119,6 +121,7 @@ export class LoginScreenComponent implements OnInit {
         error: (e) => {
           console.error(e)
           alert("Error while creating a user")
+          this.toastr.warning('Login Successfull!', 'Warning');
         }
       })
   }

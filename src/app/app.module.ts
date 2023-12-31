@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { HomeScreenComponent } from './screen/home-screen/home-screen.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -88,6 +89,7 @@ import { CartTagComponent } from './component/cart-tag/cart-tag.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
