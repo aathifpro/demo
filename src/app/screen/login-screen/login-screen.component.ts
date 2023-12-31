@@ -110,7 +110,7 @@ export class LoginScreenComponent implements OnInit {
           alert("User is Logged");
           this.submitted = true;
           if (response.jwtToken) {
-            alert(response.jwtToken);
+            // alert(response.jwtToken);
             const jwtToken = response.jwtToken;
             localStorage.setItem('JWT', jwtToken);
             this.router.navigateByUrl('/home');
