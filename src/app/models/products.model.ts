@@ -1,10 +1,10 @@
 export class Products {
     title?: string;
-    price?: any;
     ingredients?: string;
-    image?: string;
     description?: string;
+    category?: string;
+    image?: string;
+    price?: any;
     quantity?: any;
     total?: any;
-    category?: string;
 }
