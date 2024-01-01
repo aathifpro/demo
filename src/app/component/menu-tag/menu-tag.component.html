@@ -12,23 +12,23 @@
       <div class="row">
         <div class="col-md-12 nav-link-wrap">
           <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" role="tab" aria-controls="v-pills-1"
-              aria-selected="true" (click)="visibleCategory('Breakfast')">Breakfast</a>
+            <a class="nav-link" [class.active]="categoryList[0].visible" id="v-pills-1-tab" data-toggle="pill" role="tab" aria-controls="v-pills-1"
+              aria-selected="true" style="cursor: pointer;" (click)="visibleCategory('Breakfast')">Breakfast</a>
 
-            <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" role="tab" aria-controls="v-pills-2"
-              aria-selected="false" (click)="visibleCategory('Lunch')">Lunch</a>
+            <a class="nav-link" [class.active]="categoryList[1].visible" id="v-pills-2-tab" data-toggle="pill" role="tab" aria-controls="v-pills-2"
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Lunch')">Lunch</a>
 
-            <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" role="tab" aria-controls="v-pills-3"
-              aria-selected="false" (click)="visibleCategory('Dinner')">Dinner</a>
+            <a class="nav-link" [class.active]="categoryList[2].visible" id="v-pills-3-tab" data-toggle="pill" role="tab" aria-controls="v-pills-3"
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Dinner')">Dinner</a>
 
-            <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" role="tab" aria-controls="v-pills-4"
-              aria-selected="false" (click)="visibleCategory('Drinks')">Drinks</a>
+            <a class="nav-link" [class.active]="categoryList[3].visible" id="v-pills-4-tab" data-toggle="pill" role="tab" aria-controls="v-pills-4"
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Drinks')">Drinks</a>
 
-            <a class="nav-link" id="v-pills-5-tab" data-toggle="pill" role="tab" aria-controls="v-pills-5"
-              aria-selected="false" (click)="visibleCategory('Dessert')">Desserts</a>
+            <a class="nav-link" [class.active]="categoryList[4].visible" id="v-pills-5-tab" data-toggle="pill" role="tab" aria-controls="v-pills-5"
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Dessert')">Desserts</a>
 
-            <a class="nav-link" id="v-pills-6-tab" data-toggle="pill" role="tab" aria-controls="v-pills-6"
-              aria-selected="false" (click)="visibleCategory('Wine')">Wine</a>
+            <a class="nav-link" [class.active]="categoryList[5].visible" id="v-pills-6-tab" data-toggle="pill" role="tab" aria-controls="v-pills-6"
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Wine')">Wine</a>
           </div>
         </div>
         <div class="col-md-12 tab-wrap">

@@ -14,11 +14,11 @@
                                         <i class="fa fa-cc-paypal text-success"></i>
                                     </div>
                                     <h5 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Cash On
+                                        <a [class.text-success]="paymentList[0].visible" (click)="visiblePayment('cashPayment')" style="cursor: pointer;">Cash On
                                             Delivery</a>
                                     </h5>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse">
+                                <div *ngIf="paymentList[0].visible">
                                     <div class="panel-body">
 
                                         <div class="row">
@@ -59,11 +59,11 @@
                                         <i class="fa fa-cc-discover text-danger"></i>
                                     </div>
                                     <h5 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Card
+                                        <a [class.text-success]="paymentList[1].visible" (click)="visiblePayment('cardPayment')" style="cursor: pointer;">Card
                                             Payment</a>
                                     </h5>
                                 </div>
-                                <div id="collapseTwo" class="panel-collapse collapse in">
+                                <div *ngIf="paymentList[1].visible">
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-5">

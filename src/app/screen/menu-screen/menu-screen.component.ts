@@ -21,22 +21,5 @@ export class MenuScreenComponent implements OnInit {
 
   public visibleTitle: boolean = false;
 
-  categoryList: { name: string; visible: boolean }[] = [
-    { name: 'Breakfast', visible: true },
-    { name: 'Lunch', visible: false },
-    { name: 'Dinner', visible: false },
-    { name: 'Drinks', visible: false },
-    { name: 'Dessert', visible: false },
-    { name: 'Wine', visible: false },
-  ];
-
-  // Method to update category visibility
-  visibleCategory(selectedCategory: string): void {
-    // Set the visibility of the selected category to true
-    this.categoryList.forEach(category => {
-      category.visible = category.name === selectedCategory;
-    });
-  }
-
 
 }
