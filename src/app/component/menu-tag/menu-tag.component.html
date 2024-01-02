@@ -13,22 +13,22 @@
         <div class="col-md-12 nav-link-wrap">
           <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link" [class.active]="categoryList[0].visible" id="v-pills-1-tab" data-toggle="pill" role="tab" aria-controls="v-pills-1"
-              aria-selected="true" style="cursor: pointer;" (click)="visibleCategory('Breakfast')">Breakfast</a>
+              aria-selected="true" style="cursor: pointer;" (click)="visibleCategory('Rice')">Rice & Biryani</a>
 
             <a class="nav-link" [class.active]="categoryList[1].visible" id="v-pills-2-tab" data-toggle="pill" role="tab" aria-controls="v-pills-2"
-              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Lunch')">Lunch</a>
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Curry')">Curry</a>
 
             <a class="nav-link" [class.active]="categoryList[2].visible" id="v-pills-3-tab" data-toggle="pill" role="tab" aria-controls="v-pills-3"
-              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Dinner')">Dinner</a>
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Rotti')">Rotti</a>
 
             <a class="nav-link" [class.active]="categoryList[3].visible" id="v-pills-4-tab" data-toggle="pill" role="tab" aria-controls="v-pills-4"
-              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Drinks')">Drinks</a>
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Noodles')">Spaghetti & Noodles</a>
 
             <a class="nav-link" [class.active]="categoryList[4].visible" id="v-pills-5-tab" data-toggle="pill" role="tab" aria-controls="v-pills-5"
               aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Dessert')">Desserts</a>
 
             <a class="nav-link" [class.active]="categoryList[5].visible" id="v-pills-6-tab" data-toggle="pill" role="tab" aria-controls="v-pills-6"
-              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Wine')">Wine</a>
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Drinks')">Drinks</a>
           </div>
         </div>
         <div class="col-md-12 tab-wrap">
@@ -39,7 +39,7 @@
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
                   <!-- <div class="menus d-sm-flex ftco-animate align-items-stretch"> -->
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'breakfast'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Rice'">
                     <div class="menu-img img" [class.order-md-last]="i===2 || i===3 || i===6 || i===7"
                       [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
@@ -65,7 +65,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'lunch'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Curry'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
@@ -92,7 +92,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'dinner'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Rotti'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
@@ -119,7 +119,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'drink'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Noodles'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
@@ -173,7 +173,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'wine'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'drink'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
