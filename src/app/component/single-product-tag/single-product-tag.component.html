@@ -29,7 +29,7 @@
             <option>Large</option>
         </select>
         <input type="number" [(ngModel)]="selectedProduct.quantity" value="1" min="1" (input)="onQuantityChange()">
-        <button class="normal">Add to Cart</button>
+        <button class="normal" (click)="addToCart(selectedProduct)">Add to Cart</button>
         <button class="normal" style="margin-left: 10px;" (click)="navigateToDestination(selectedProduct.id)">Chech Out</button>
         <h4>Product Details</h4>
         <span>{{selectedProduct.description}}</span>

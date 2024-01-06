@@ -11,6 +11,10 @@ export class PaymentTagComponent implements OnInit {
 
   selectedProduct: any;
   quantity: any = 1;
+  totalCost: number = 0;
+  cartRouteName: any = ''
+
+  public currentRouteName: any = ''
 
   constructor(
     private productService: ProductService,
@@ -20,10 +24,13 @@ export class PaymentTagComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.getCurrentRouteName();
     this.route.queryParams.subscribe(params => {
       const productId = params['productId'];
       this.quantity = params['productQuantity']
+      this.totalCost = params['totalCost']
+      this.cartRouteName = params['routeName']
       this.getProductDetails(productId);
     })
   }
@@ -59,6 +66,11 @@ export class PaymentTagComponent implements OnInit {
         payment.visible = !payment.visible;
       }
     });
+  }
+
+  getCurrentRouteName() {
+    this.currentRouteName = this.route.snapshot.routeConfig?.path;
+    console.log("current Router name : ", this.currentRouteName)
   }
 
 }

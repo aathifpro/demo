@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/service/product/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/cart.service';
+import { Products } from 'src/app/models/products.model';
 
 @Component({
   selector: 'app-single-product-tag',
@@ -15,6 +17,7 @@ export class SingleProductTagComponent implements OnInit {
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
+    private cartService: CartService,
   ) { }
 
   ngOnInit(): void {
@@ -52,5 +55,9 @@ export class SingleProductTagComponent implements OnInit {
     this.selectedProduct.total = this.selectedProduct.quantity * this.selectedProduct.price
   }
 
+
+  addToCart(product: Products): void {
+    this.cartService.addToCrat(product);
+  }
 
 }

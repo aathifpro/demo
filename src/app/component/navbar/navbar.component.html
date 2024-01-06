@@ -42,7 +42,10 @@
           <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Contact</a></li>
           <li class="nav-item cta"><a routerLink="/reservation" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Book a table</a></li>
           <li class="nav-item cta">
-            <i class="fas fa-sign-in-alt m-4 fa-lg" style="color: #a07500ad; font-size: 30px; cursor: pointer;" (click)="logout()"></i>
+            <i class="fas fa-cart-plus m-4 fa-lg" style="color: #ffffff; font-size: 30px; cursor: pointer;" routerLink="/cart"></i>
+          </li>
+          <li class="nav-item cta">
+            <i class="fas fa-sign-in-alt m-4 fa-lg" style="color: #ecb008ad; font-size: 30px; cursor: pointer;" (click)="logout()"></i>
           </li>
         </ul>
       </div>

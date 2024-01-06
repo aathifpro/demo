@@ -6,6 +6,7 @@
 
                     <!-- Shopping cart table -->
                     <div class="table-responsive">
+                        <button (click)="clearCart()">Clear Cart Details</button>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -19,31 +20,34 @@
                                         <div class="py-2 text-uppercase">Quantity</div>
                                     </th>
                                     <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Total Price</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
                                         <div class="py-2 text-uppercase">Remove</div>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let cart of cartItems; let i = index;">
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
-                                            <img src="assets/images/breakfast-1.jpg" alt="" width="70"
+                                            <img src="{{cart.image}}" alt="" width="70"
                                                 class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> <a href="#"
-                                                        class="text-dark d-inline-block align-middle">Grilled Beef with
-                                                        potatoes</a></h5><span
+                                                        class="text-dark d-inline-block align-middle">{{cart.title}}</a></h5><span
                                                     class="text-muted font-weight-normal font-italic d-block">Category:
-                                                    Watches</span>
+                                                    {{cart.category}}</span>
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                                    <td class="border-0 align-middle"><strong>3</strong></td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i
+                                    <td class="border-0 align-middle"><strong>${{cart.price}}</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{cart.quantity}}</strong></td>
+                                    <td class="border-0 align-middle"><strong>${{cart.total}}</strong></td>
+                                    <td class="border-0 align-middle"><a class="text-dark"><i (click)="removeItem(i)"
                                                 class="fa fa-trash"></i></a></td>
                                 </tr>
-                                <tr>    
+                                <!-- <tr>    
                                     <th scope="row">
                                         <div class="p-2">
                                             <img src="assets/images/breakfast-2.jpg" alt="" width="70"
@@ -61,8 +65,8 @@
                                     <td class="align-middle"><a href="#" class="text-dark"><i
                                                 class="fa fa-trash"></i></a>
                                     </td>
-                                </tr>
-                                <tr>
+                                </tr> -->
+                                <!-- <tr>
                                     <th scope="row">
                                         <div class="p-2">
                                             <img src="assets/images/breakfast-3.jpg" alt="" width="70"
@@ -79,7 +83,7 @@
                                     <td class="align-middle"><a href="#" class="text-dark"><i
                                                 class="fa fa-trash"></i></a>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -117,16 +121,16 @@
                         </p>
                         <ul class="list-unstyled mb-4">
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+                                    class="text-muted">Order Subtotal </strong><strong>${{subTotal}}</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+                                    class="text-muted">Shipping and handling</strong><strong>${{shippingCost}}</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                                    class="text-muted">Tax</strong><strong>${{taxCost}}</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                     class="text-muted">Total</strong>
-                                <h5 class="font-weight-bold">$400.00</h5>
+                                <h5 class="font-weight-bold">${{totalCost}}</h5>
                             </li>
-                        </ul><a href="#" class="btn btn-primary py-3 px-5 py-2 btn-block">Procceed to checkout</a>
+                        </ul><a class="btn btn-primary py-3 px-5 py-2 btn-block" (click)="navigateToDestination()">Procceed to checkout</a>
                     </div>
                 </div>
             </div>
