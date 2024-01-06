@@ -1,6 +1,6 @@
-<section id="prodetails" class="section-p1">
+<section id="prodetails" class="section-p1" *ngIf="selectedProduct">
     <div class="single-pro-image">
-        <img src="assets/images/breakfast-2.jpg" width="100%" id="MainImg">
+        <img src="{{selectedProduct.image}}" width="100%" height="500px" id="MainImg">
 
         <!-- <div class="small-img-group">
             <div class="small-img-col">
@@ -19,22 +19,19 @@
     </div>
 
     <div class="single-pro-details">
-        <h6>Meat, Potatoes, Rice, Tomatoe</h6>
-        <h4>Grilled Beef with potatoes</h4>
-        <h2>$990.00</h2>
+        <h6>{{selectedProduct.ingredients}}</h6>
+        <h4>{{selectedProduct.title}}</h4>
+        <h2>${{selectedProduct.price * selectedProduct.quantity}}</h2>
         <select>
             <option>Select Size</option>
             <option>Small</option>
             <option>Medium</option>
             <option>Large</option>
         </select>
-        <input type="number" value="1">
+        <input type="number" [(ngModel)]="selectedProduct.quantity" value="1" min="1" (input)="onQuantityChange()">
         <button class="normal">Add to Cart</button>
+        <button class="normal" style="margin-left: 10px;" (click)="navigateToDestination(selectedProduct.id)">Chech Out</button>
         <h4>Product Details</h4>
-        <span>Get the best Results for Resume Writers Denver. Find what you are looking for! 99% Match on Resume Writers
-            Denver. Find Here - Free, Private and Secure. The Best Resources. Always Facts. Unlimited Access. Results &
-            Answers. Privacy Friendly. Grammarly Helps You Eliminate Errors And Find The Perfect Words To Express
-            Yourself. Find and Add Sources Fast. Fix Punctuation Errors. AI Writing Assistant. Eliminate Grammar Errors.
-            Improve Word Choice. Easily Improve Any Text.</span>
+        <span>{{selectedProduct.description}}</span>
     </div>
 </section>

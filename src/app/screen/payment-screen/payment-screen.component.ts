@@ -12,6 +12,8 @@ export class PaymentScreenComponent implements OnInit {
 
   }
 
+  public breadCrumbs = "payment";
+
   public headerItems: HeaderItems = {
     headerTitle: "Payment Page",
     pageName: "Payment",

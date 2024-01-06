@@ -6,9 +6,10 @@
             <!-- <div class="col-md-9 ftco-animate text-center mb-4"> -->
             <div class="col-md-9 text-center mb-4">
                 <h1 class="mb-2 bread">{{ headerItem?.headerTitle }}</h1>
-                <p class="breadcrumbs"><span class="mr-2"><a routerLink="/home">Home <i
-                                class="ion-ios-arrow-forward"></i></a></span> <span>{{headerItem?.pageName}} <i
-                            class="ion-ios-arrow-forward"></i></span>
+                <p class="breadcrumbs">
+                    <span class="mr-2"><a routerLink="/home">Home <i class="ion-ios-arrow-forward"></i></a></span>
+                    <span class="mr-2" *ngIf="currentRouteName === showedbreadCrumbs"><a routerLink="/menu">Menu <i class="ion-ios-arrow-forward"></i></a></span>
+                    <span>{{headerItem?.pageName}} <i class="ion-ios-arrow-forward"></i></span>
                 </p>
             </div>
         </div>

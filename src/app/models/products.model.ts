@@ -1,4 +1,5 @@
 export class Products {
+    id?: any;
     title?: string;
     ingredients?: string;
     description?: string;

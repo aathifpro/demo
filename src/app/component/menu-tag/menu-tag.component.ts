@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { ProductService } from 'src/app/service/product/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-tag',
@@ -17,6 +18,7 @@ export class MenuTagComponent {
 
   constructor(
     private productService: ProductService,
+    private router: Router,
   ) {}
 
   productList?: Products[];
@@ -54,6 +56,10 @@ export class MenuTagComponent {
     this.categoryList.forEach(category => {
       category.visible = category.name === selectedCategory;
     });
+  }
+
+  navigateToDestination(id: any) {
+    this.router.navigate(['/single-product'], {queryParams: {productId: id}})
   }
 
 

@@ -28,7 +28,7 @@
               aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Dessert')">Desserts</a>
 
             <a class="nav-link" [class.active]="categoryList[5].visible" id="v-pills-6-tab" data-toggle="pill" role="tab" aria-controls="v-pills-6"
-              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Drinks')">Drinks</a>
+              aria-selected="false" style="cursor: pointer;" (click)="visibleCategory('Drink')">Drinks</a>
           </div>
         </div>
         <div class="col-md-12 tab-wrap">
@@ -53,7 +53,7 @@
                           </div>
                         </div>
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>
@@ -80,7 +80,7 @@
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
                           <span>Tomatoe</span>
                         </p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
                           <span>Tomatoe</span>
                         </p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>
@@ -134,7 +134,7 @@
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
                           <span>Tomatoe</span>
                         </p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>
@@ -146,7 +146,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'dessert'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Dessert'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
@@ -161,7 +161,7 @@
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
                           <span>Tomatoe</span>
                         </p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>
@@ -173,7 +173,7 @@
               <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch"
                   *ngFor="let product of productList; let i = index">
-                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'drink'">
+                  <div class="menus d-sm-flex align-items-stretch" *ngIf="product.category == 'Drink'">
                     <div class="menu-img img" [style.background-image]="'url('+product.image+')'"></div>
                     <div class="text d-flex align-items-center">
                       <div>
@@ -188,7 +188,7 @@
                         <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
                           <span>Tomatoe</span>
                         </p>
-                        <p><a href="#" class="btn btn-primary">Order now</a></p>
+                        <p><a class="btn btn-primary" (click)="navigateToDestination(product.id)">Order now</a></p>
                       </div>
                     </div>
                   </div>

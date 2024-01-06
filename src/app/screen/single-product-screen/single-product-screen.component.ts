@@ -18,4 +18,6 @@ export class SingleProductScreenComponent implements OnInit {
     headerImage: "assets/images/bg_5.jpg"
   };
 
+  public breadCrumbs = "single-product"
+
 }
