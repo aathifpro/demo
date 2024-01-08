@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Reservation } from 'src/app/models/reservation.model';
+import { ReservationService } from 'src/app/reservation.service';
 
 
 @Component({
@@ -8,6 +10,16 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
   styleUrls: ['./reservation-from.component.css']
 })
 export class ReservationFromComponent implements OnInit {
+
+  reservation: Reservation = {
+    name: '',
+    email: '',
+    number: 0,
+    date: '',
+    time: '',
+    personCount: '',
+  }
+
 
   form: FormGroup = new FormGroup({
     name: new FormControl(''),
@@ -20,21 +32,24 @@ export class ReservationFromComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private reservationService: ReservationService
+  ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        name: ['', [ Validators.required, Validators.minLength(6), Validators.maxLength(20) ] ],
-        email: ['', [ Validators.required, Validators.email ] ],
-        phone: ['', [ Validators.required, Validators.pattern(/^\d{10}$/) ] ],
-        date: ['', [ Validators.required, this.dateValidator ] ],
-        time: ['', [ Validators.required, this.timeValidator ] ],
+        name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+        date: ['', [Validators.required, this.dateValidator]],
+        time: ['', [Validators.required, this.timeValidator]],
       }
     )
   }
 
-  get f(): { [key: string]: AbstractControl} {
+  get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
@@ -42,7 +57,7 @@ export class ReservationFromComponent implements OnInit {
     console.log('Error while submitting form:', this.form.value);
     this.submitted = true;
 
-    if(this.form.invalid){
+    if (this.form.invalid) {
       return;
     }
 
@@ -70,10 +85,34 @@ export class ReservationFromComponent implements OnInit {
     const currentTime = new Date();
 
     if (selectedTime.getHours() < currentTime.getHours() ||
-        (selectedTime.getHours() === currentTime.getHours() && selectedTime.getMinutes() < currentTime.getMinutes())) {
+      (selectedTime.getHours() === currentTime.getHours() && selectedTime.getMinutes() < currentTime.getMinutes())) {
       return { pastTime: true };
     }
     return null;
+  }
+
+  saveRepository(): void {
+    const data = {
+      name: this.reservation.name,
+      email: this.reservation.email,
+      number: this.reservation.number,
+      date: this.reservation.date,
+      time: this.reservation.time,
+      personCount: this.reservation.personCount,
+    }
+
+    this.reservationService.createReservtion(data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+          alert("Reservation added");
+        },
+        error: (e) => {
+          console.log(e + "Reservation failed");
+          alert("Error while adding reservation");
+        }
+      });
   }
 
 }

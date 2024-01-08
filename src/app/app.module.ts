@@ -43,6 +43,8 @@ import { OrderListTagComponent } from './component/order-list-tag/order-list-tag
 import { CartScreenComponent } from './screen/cart-screen/cart-screen.component';
 import { CartTagComponent } from './component/cart-tag/cart-tag.component';
 import { CartService } from './cart.service';
+import { ReservationService } from './reservation.service';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,7 @@ import { CartService } from './cart.service';
     FormsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [CartService],
+  providers: [AuthService, CartService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
