@@ -30,7 +30,7 @@ Welcome to the Restaurant Management System Client Frontend! This Angular applic
    ```bash
    npm install
 
-2. Run the application:
+3. Run the application:
 
    ```bash
    ng serve
