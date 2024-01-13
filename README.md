@@ -1,4 +1,3 @@
-Copy code
 # Restaurant Management System - Client Frontend
 
 Welcome to the Restaurant Management System Client Frontend! This Angular application provides an intuitive interface for customers to interact with the restaurant system, allowing them to browse the menu, place orders, make reservations, and manage their personal details.
@@ -6,12 +5,9 @@ Welcome to the Restaurant Management System Client Frontend! This Angular applic
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-- [Features](#features)
-- [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Usage](#usage)
 
 ## Getting Started
 
@@ -26,7 +22,7 @@ Welcome to the Restaurant Management System Client Frontend! This Angular applic
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/restaurant-management-client.git
+   git clone https://github.com/aathifpro/restuarant_frontend_angular.git
    cd restaurant-management-client
 
 2. Install dependencies:
@@ -39,19 +35,11 @@ Welcome to the Restaurant Management System Client Frontend! This Angular applic
    ```bash
    ng serve or npm start
 
-### Installation
-
-- Responsive Design: Ensures optimal user experience on various devices.
-- Product Ordering: Browse the menu, add items to the shopping cart, and place orders.
-- Reservation: Reserve a table online for a specific date and time.
-- User Profile Management: Add, edit, or delete personal details.
-- Order Tracking: Track the status of orders and deliveries.
-
-### Installation
+## Technologies Used
 
 Angular
 
-### Folder Structure
+## Folder Structure
 
 src/app: Angular application files.
 src/assets: Static assets.
