@@ -33,7 +33,7 @@ Welcome to the Restaurant Management System Client Frontend! This Angular applic
 2. Run the application:
 
    ```bash
-   ng serve or npm start
+   ng serve
 
 ## Technologies Used
 
